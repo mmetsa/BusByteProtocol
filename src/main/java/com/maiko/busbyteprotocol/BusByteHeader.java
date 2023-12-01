@@ -1,4 +1,4 @@
-package com.ridango.busbyteprotocol;
+package com.maiko.busbyteprotocol;
 
 import java.nio.ByteBuffer;
 
