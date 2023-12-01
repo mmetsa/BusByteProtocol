@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class BusByteMessage {
 
-    private BusByteHeader header;
-    private byte[] data;
+    private final BusByteHeader header;
+    private final byte[] data;
 
     private static final byte DELIMITER = 0x7E;
     private static final byte ESCAPE = 0x7D;
