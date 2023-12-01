@@ -1,4 +1,4 @@
-package busbyteprotocol;
+package com.ridango.busbyteprotocol;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Arrays;

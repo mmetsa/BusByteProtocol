@@ -1,4 +1,4 @@
-package busbyteprotocol;
+package com.ridango.busbyteprotocol;
 
 public class Checksum8 {
 

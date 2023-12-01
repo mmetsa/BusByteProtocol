@@ -1,5 +1,7 @@
 package busbyteprotocol;
 
+import com.ridango.busbyteprotocol.BusByteHeader;
+import com.ridango.busbyteprotocol.BusByteMessage;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
