@@ -16,14 +16,6 @@ public class BusByteMessage {
     public BusByteMessage(BusByteHeader header, byte[] data) {
         this.header = header;
         this.data = data;
-        addDelimiter();
-    }
-
-    private void addDelimiter() {
-        byte[] messageWithDelimiter = new byte[header.toByteArray().length + data.length + 1];
-        System.arraycopy(header.toByteArray(), 0, messageWithDelimiter, 0, header.toByteArray().length);
-        System.arraycopy(data, 0, messageWithDelimiter, header.toByteArray().length, data.length);
-        messageWithDelimiter[messageWithDelimiter.length - 1] = DELIMITER;
     }
 
     public byte[] toByteArray() {
@@ -70,9 +62,6 @@ public class BusByteMessage {
     }
 
     public byte[] getMessageBytes() {
-        // Convert header to byte array
-        byte[] headerBytes = header.toByteArray();
-
         byte[] messageBytes = new byte[data.length];
 
         // Copy data bytes to the message bytes after the header
@@ -102,7 +91,7 @@ public class BusByteMessage {
         byte[] dataWithoutStuffing = removeByteStuff(dataBytes);
 
         // Parse the header bytes and create a BusByteHeader object
-        BusByteHeader header = BusByteHeader.fromByteArray(headerBytes); // Implement this method
+        BusByteHeader header = BusByteHeader.fromByteArray(headerBytes);
 
         return new BusByteMessage(header, dataWithoutStuffing);
     }
